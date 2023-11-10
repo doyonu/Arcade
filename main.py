@@ -68,6 +68,12 @@ class MyGame(arcade.Window):
             if ball.y > SCREEN_HEIGHT - ball.size:
                 ball.change_y *= -1
 
+    def on_mouse_press(self, x, y, button, modifiers):
+        if button == arcade.MOUSE_BUTTON_LEFT:
+            ball = make_ball()
+            self.ball_list.append(ball)
+        if button == arcade.MOUSE_BUTTON_RIGHT:
+
 
 def main():
     my_game = MyGame()
