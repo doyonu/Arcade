@@ -1,46 +1,46 @@
 import arcade
 import random
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 700
 
 class Ball:
-    def __init__(self):
-        self.x = 0
-        self.y = 0
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
         self.change_x = 0
         self.change_y = 0
         self.size = 0
         self.color = None
-def make_ball():
-    ball = Ball()
+def make_ball(x,y):
+    ball = Ball(x,y)
 
     ball.size = 20
-    ball.x = 20
-    ball.y = 20
+    ball.x = x
+    ball.y = y
     ball.change_x = 5
     ball.change_y = 5
     ball.color = arcade.color.CRIMSON
     return ball
 
 class Rectangle:
-    def __init__(self):
-        self.x = 0
-        self.y = 0
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
         self.width = 0
         self.height = 0
         self.angle = 0
         self.change_x = 0
         self.change_y = 0
         self.color = None
-def make_rectangle():
-    rectangle = Rectangle()
+def make_rectangle(x,y):
+    rectangle = Rectangle(x,y)
 
-    rectangle.x = 400
-    rectangle.y = 400
-    rectangle.width = 10
-    rectangle.height = 20
-    rectangle.angle = 0
+    rectangle.x = x
+    rectangle.y = y
+    rectangle.width = 20
+    rectangle.height = 40
+    rectangle.angle = 90
     rectangle.change_x = 5
     rectangle.change_y = 5
     rectangle.color = arcade.color.APPLE_GREEN
@@ -50,12 +50,12 @@ class MyGame(arcade.Window):
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Exercice #1")
         self.ball_list = []
-        ball = make_ball()
-        self.ball_list.append(ball)
+        #ball = make_ball()
+        #self.ball_list.append(ball)
 
         self.rectangle_list = []
-        rectangle = make_rectangle()
-        self.rectangle_list.append(rectangle)
+        #rectangle = make_rectangle()
+        #self.rectangle_list.append(rectangle)
 
     def setup(self):
         arcade.set_background_color((172, 229, 238))
@@ -106,10 +106,10 @@ class MyGame(arcade.Window):
 
     def on_mouse_press(self, x, y, button, modifiers):
         if button == arcade.MOUSE_BUTTON_LEFT:
-            ball = make_ball()
+            ball = make_ball(x,y)
             self.ball_list.append(ball)
         if button == arcade.MOUSE_BUTTON_RIGHT:
-            rectangle = make_rectangle()
+            rectangle = make_rectangle(x,y)
             self.rectangle_list.append(rectangle)
 
 
