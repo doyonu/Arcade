@@ -1,7 +1,7 @@
 import arcade
 import random
 
-SCREEN_WIDTH = 1000
+SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 700
 
 class Ball:
