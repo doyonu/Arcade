@@ -75,7 +75,7 @@ class MyGame(arcade.Window):
         for rectangle in self.rectangle_list:
             arcade.draw_rectangle_filled(rectangle.x, rectangle.y, rectangle.width, rectangle.height, rectangle.color, rectangle.angle)
             pass
-#changement de direction
+#changement de direction "mur"
     def on_update(self, delta_time):
         for ball in self.ball_list:
             ball.x += ball.change_x
